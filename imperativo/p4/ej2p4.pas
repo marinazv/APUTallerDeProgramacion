@@ -26,6 +26,7 @@ program ej2p4;
 
 const
 	dimF= 8;
+	vmax=9999;
 	
 type
 	pelicula= record
@@ -89,11 +90,22 @@ begin
 		leerPeli(p);
 	end;
 end;
-procedure minimo(var vp:vectorPeli; var minPeli: pelicula);
-
+procedure minimo(var vp:vectorPelis; var minPeli: pelicula);
+var 
+	iMin,i:integer;
 begin
-	minPeli.cod:= 9999;
-	
+	minPeli.cod:= vmax;
+	for i:=1 to dimF do begin
+		if(vp[i] <>nil )then begin
+			if(vp[i]^.dato.cod <= minPeli.cod) then begin
+				iMin:= i;
+				minPeli:= vp[i]^.dato;
+			end
+		end;
+		if(minPeli.cod <> vmax) then begin
+			vp[iMin]:= vp[iMin]^.sig; 
+		end
+	end;
 end;
 procedure Merge(vp:vectorPelis; var l:lista);
 
@@ -112,7 +124,7 @@ procedure Merge(vp:vectorPelis; var l:lista);
 begin
 	l:= nil;
 	minimo(vp,minPeli);
-	while(min <> 9999) do begin
+	while(minPeli.cod <> vmax) do begin
 		AgregarAtras(l,ult,minPeli);
 		minimo(vp,minPeli);
 	end;
