@@ -84,20 +84,25 @@ procedure cargarVentas(var vv:vecVtas);
 			ant^.sig := nue;
 			nue^.sig := act ;
 	end;
+procedure minimo(var vv:vecVtas; var  );
 
-procedure MergeAcumulador(vv: vecVtas; var l:lista2);
 begin
-	l:=nil;
 	
 end;
-var 
-	vt:venta;
+procedure MergeAcumulador(vv: vecVtas; var l:lista2);
 	
-begin
-	leerVta(vt);
-	while(vt.sucursal <> 0) do begin		
-		InsertarOrdenadoEnLista(vv[vt.sucursal],vt);
-		leerVta(vt);
+var
+	codMin:integer;
+	actual: vtot;
+Begin
+	l:=nil;
+	minimo(vv, codMin, cantTot);
+	while(codMin <> 9999 )do begin
+		actual.dato.cod:= codMin;
+		actual.dato.cant:= cantTot;
+		while(codMin <>9999 and codMin= )do begin
+			
+		end;
 	end;
 end;
 var 
