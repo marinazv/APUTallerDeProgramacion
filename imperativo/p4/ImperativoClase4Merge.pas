@@ -12,7 +12,8 @@ f.	Un módulo recursivo que reciba la estructura generada en e. y muestre su con
 
 
 Program ejer1Clase4;
-Const dimF = 12;
+Const 
+	  dimF = 12;
       valorGrande = 9999;
 Type rangoDias = 1.. 31;
      rangoMeses = 1..12;
@@ -138,7 +139,8 @@ begin
 end;
   
 Procedure minimo (var v: vector; var prestamoMin: prestamoAGuardar);
-   var indiceMin,i:integer;
+   var 
+   indiceMin,i:integer;
    Begin
      prestamoMin.ISBN:= valorGrande;
      for i:= 1 to dimF do
@@ -166,7 +168,9 @@ Procedure minimo (var v: vector; var prestamoMin: prestamoAGuardar);
    end;
 
 
-var prestamoMin: prestamoAGuardar; ult: lista;
+var 
+	prestamoMin: prestamoAGuardar; 
+	ult: lista;
 begin
   l:= nil;
   minimo (v, prestamoMin);
@@ -236,7 +240,10 @@ begin
      else imprimirListaAcumulador (l);
 end;
 
-var v: vector; l1: lista; l2: listaAcumulador;
+var 
+	v: vector;
+	l1: lista; 
+	l2: listaAcumulador;
 
 begin
  Randomize;
