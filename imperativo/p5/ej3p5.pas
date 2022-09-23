@@ -45,6 +45,7 @@ type
 	end;
 	
 	vector= array[rub] of arbol;
+procedure cargarProductos();
 var
 	
 
