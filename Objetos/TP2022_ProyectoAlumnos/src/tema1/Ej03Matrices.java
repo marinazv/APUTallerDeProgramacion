@@ -44,27 +44,35 @@ public class Ej03Matrices {
                   vecJ[j]=vecJ[j]+tabla[i][j];
             }
         }
+                
         for(int i=0; i<dim;i++){
             System.out.println(vecJ[i]+"--");
         }
         
         System.out.println("Ingrese un valor a buscar en la matriz: ");
         int buscar= Lector.leerInt();
-        int i=0, j=0;
+        int i=0;
+        int j=0;
+        int posI=-1;
+        int posJ=-1;
         boolean esta= false;
-        while(i<dim && !esta){
-            while(j<dim && !esta){
+        while((i<dim) && (!esta)){
+            while((j<dim) && (!esta)){
                 if(tabla[i][j] == buscar){
                     esta=true;
+                    posI=i;
+                    posJ=j;
                 }
+                j++;
             }
+            i++;
+            j=0;
+        }        
+        if (esta) {
+            System.out.println("El numero: " + buscar + ", se encuentra en la fila " + posI + ", columna " + posJ);
+        } else {
+            System.out.println("No se encontro el elemnto " + buscar + " en la matriz");
         }
-        
-        if(esta){
-            System.out.println("El numero: "+ buscar+", se encuentra en la fila "+ i+", columna "+j);
-        }else{
-                System.out.println("No se encontro el elemnto "+ buscar+ " en la matriz");
-    }
    
 	    //Paso 2. iniciar el generador aleatorio     
 	 

@@ -28,8 +28,8 @@ public class Persona2Main {
         while (dimL < dimF && p.getEdad() != 0) {
             p.setNombre(GeneradorAleatorio.generarString(20));
             p.setDNI(GeneradorAleatorio.generarInt(99999999));
-            dimL++;
             vecPer[dimL] = p;
+            dimL++;            
             p = new Persona();
             p.setEdad(GeneradorAleatorio.generarInt(99));
         }
