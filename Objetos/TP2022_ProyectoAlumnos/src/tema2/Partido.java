@@ -76,6 +76,14 @@ public class Partido {
          }
          return ganador;
                  
-    }	    
+    }	 
+
+    @Override
+    public String toString() {
+        
+        return "Partido{" + " EQUIPO LOCAL=" + local + ", golesLocal=" + golesLocal+ ", EQUIPO VISITANTE=" + visitante  + ", golesVisitante=" + golesVisitante + '}';
+    }
+    
+       
     
 }
