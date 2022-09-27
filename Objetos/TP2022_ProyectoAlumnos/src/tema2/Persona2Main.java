@@ -46,7 +46,10 @@ public class Persona2Main {
 
         }
         System.out.println("La cantidad de personas mayores a 65 años es: "+ count);
-        System.out.println(pMin.toString());
+        if (pMin!=null) {
+            System.out.println(pMin.toString());
+        }
+        
         
             }
 }

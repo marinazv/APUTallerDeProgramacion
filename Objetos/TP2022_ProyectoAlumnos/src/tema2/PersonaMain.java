@@ -19,7 +19,7 @@ muestre en consola la representación de ese objeto en formato String.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Persona p1=new Persona();
+       /* Persona p1=new Persona();
         System.out.println("Ingrese nombre de la persona:");
         p1.setNombre(Lector.leerString());
         System.out.println("Ingrese dni:");
@@ -28,7 +28,11 @@ muestre en consola la representación de ese objeto en formato String.
         p1.setEdad(Lector.leerInt());
         
         System.out.println( p1.toString());
+        */
+        Persona p2= new Persona("ariel", 34555,37);
+        System.out.println(p2.toString());
         
+ 
     }
     
 }
