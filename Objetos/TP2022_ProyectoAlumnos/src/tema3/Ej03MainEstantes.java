@@ -20,7 +20,34 @@ public class Ej03MainEstantes {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Libro libro1= new  Libro( "Java: A Beginner's Guide",   
+                                 "Mcgraw-Hill", 2014,   
+                                 new Autor("Herbert Schildt", "vbyrvbybvr", "algun lugar"), "978-0071809252", 21.72);
+        Libro libro2= new Libro("Learning Java by Building Android Games",  
+                              "CreateSpace Independent Publishing", 
+                              new Autor( "John Horton","jbsvbsbvh","otro lugar"), "978-1512108347");
+        Libro libro3= new Libro("Mujercitas",  
+                              "CreateSpace Independent Publishing", 
+                              new Autor( "autor de mujercitas","jbsvbsbvh","otro lugar"), "978-1512108347");
+        
+        Estante e= new Estante(20);
+        e.cargarLibro(libro1);
+        e.cargarLibro(libro2);
+        e.cargarLibro(libro1);
+        e.cargarLibro(libro2);
+        e.cargarLibro(libro1);
+        e.cargarLibro(libro2);
+        e.cargarLibro(libro1);
+        e.cargarLibro(libro2);
+        e.cargarLibro(libro1);
+        e.cargarLibro(libro2);
+        e.cargarLibro(libro3);
+        
+        if (e.buscarLibro("Mujercitas") != null) {
+            System.out.println("El autor del libro con titulo 'Mujercitas' es: "+ e.buscarLibro("Mujercitas").getPrimerAutor().getNombre());
+        } else {
+        System.out.println("No se encontro el libro en el estante");
+        }
     }
     
 }
