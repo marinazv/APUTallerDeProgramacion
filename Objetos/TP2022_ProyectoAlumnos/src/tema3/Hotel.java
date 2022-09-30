@@ -5,6 +5,8 @@
  */
 package tema3;
 
+import tema2.Persona;
+
 /**
  *
  * @author marin
@@ -35,13 +37,25 @@ public class Hotel {
         this.dimF = dimF;
     }
 
-    
+    public Habitacion[] getHotelito() {
+        return hotelito;
+    }
+
+    public void setHotelito(Habitacion[] hotelito) {
+        this.hotelito = hotelito;
+    }
+
+    public void cargarOcuparHab(int numH, Persona unCliente){
+           hotelito[numH-1].cargarCliente(unCliente);
+           hotelito[numH-1].setOcupada(true);
+ 
+    }
     
     public void verHabitaciones(){
         int aux;
         for (int i = 0; i < dimF; i++) {
             aux = i+1;
-            System.out.println( "{Habitacion " + aux +hotelito[i].toString()+"}") ;
+            System.out.println( "{Habitacion " + aux+ " esta " +hotelito[i].toString()+"}") ;
         }
         
     }

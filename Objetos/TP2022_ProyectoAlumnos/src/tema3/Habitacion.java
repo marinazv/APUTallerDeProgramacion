@@ -47,7 +47,7 @@ public class Habitacion {
         return cliente;
     }
 
-    public void setCliente(Persona cliente) {
+    public void cargarCliente(Persona cliente) {
         this.cliente = cliente;
     }
 
