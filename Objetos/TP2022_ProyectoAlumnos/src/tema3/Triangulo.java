@@ -59,12 +59,17 @@ public class Triangulo {
     }
     
     public double calcularPerimetro(){
-        return (a+b+c);
+        return (this.a+this.b+this.c);
     }
     
     public double calcularArea(){
-        double s= calcularPerimetro()%2;
-        return Math.sqrt(s*((s-a)*(a-b)*(s-c)));
+        double s= calcularPerimetro()/2;
+        return Math.sqrt(s*(s-this.a)*(s-this.b)*(s-this.c));
+    }
+
+    @Override
+    public String toString() {
+        return "Triangulo{" + "lado a=" + a + ", lado b=" + b + ",lado  c=" + c + ", color=" + color + '}';
     }
     
 }

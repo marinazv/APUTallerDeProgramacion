@@ -18,13 +18,6 @@ public class Estante {
         dimF=unaDim;
         dimL=0;
         est = new Libro[dimF];
-        inicializarEstante();
-    }
-    
-    private void inicializarEstante(){
-        for (int i = 0; i < dimF; i++) {
-            est[i]=null;
-        }
     }
     
     private void setDimL(){
@@ -40,9 +33,9 @@ public class Estante {
          
     }
     public void cargarLibro(Libro unLibro){
-        if (!estaLleno()) {
-            setDimL();
+        if (!estaLleno()) {            
             est[dimL]= unLibro;
+            setDimL();
         }
     }
     

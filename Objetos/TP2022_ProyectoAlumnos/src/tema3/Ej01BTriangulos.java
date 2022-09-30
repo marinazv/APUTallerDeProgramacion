@@ -35,7 +35,7 @@ public class Ej01BTriangulos {
         
         System.out.println("El perimeto del triangulo es: "+ t.calcularPerimetro());
         System.out.println("El area del triangulo es: "+ t.calcularArea());
-        
+        System.out.println(t.toString());
     }
     
 }
