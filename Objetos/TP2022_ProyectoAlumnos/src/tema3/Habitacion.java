@@ -49,6 +49,7 @@ public class Habitacion {
 
     public void cargarCliente(Persona cliente) {
         this.cliente = cliente;
+        this.ocupada=true;
     }
 
     @Override

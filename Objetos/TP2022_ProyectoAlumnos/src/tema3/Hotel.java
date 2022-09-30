@@ -47,7 +47,6 @@ public class Hotel {
 
     public void cargarOcuparHab(int numH, Persona unCliente){
            hotelito[numH-1].cargarCliente(unCliente);
-           hotelito[numH-1].setOcupada(true);
  
     }
     
