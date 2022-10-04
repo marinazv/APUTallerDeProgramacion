@@ -5,21 +5,24 @@
  */
 package tema4;
 
+import tema2.Persona;
+
 /**
  *
  * @author marin
  */
-public class Ej02EmpleadosMain {
+public class Ej03GaritaMain {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Jugador j= new Jugador(50, 11, "juan gomez", 12345.56, 9);
+        Persona p= new Persona("marina", 432563, 35);
         
-        Entrenador e = new Entrenador(8, "martin garcia", 3456.7,12);
-        System.out.println(j.toString());
-        System.out.println(e.toString());
+        Trabajador t= new Trabajador("jardinero","Juan", 254664, 45);
+        
+        System.out.println(p.toString());
+        System.out.println(t.toString());
     }
     
 }

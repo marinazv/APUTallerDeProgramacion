@@ -36,10 +36,15 @@ public class Jugador extends Empleado{
         this.goles = goles;
     }
     
-    
+    /*No hace la cuenta xq???*/
     @Override
     public double calcularEfectividad() {
-        return getGoles()/getPartidos();
+        if (getPartidos() > 0) {
+            return getGoles()/getPartidos();
+        } else {
+            return 0;
+        }
+        
     }
 
     @Override

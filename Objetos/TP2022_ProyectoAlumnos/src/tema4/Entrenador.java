@@ -28,6 +28,7 @@ public class Entrenador extends Empleado {
     
     @Override
     public double calcularEfectividad() {
+        
         return getGanados()/getAntiguedad() ;
     }
 
