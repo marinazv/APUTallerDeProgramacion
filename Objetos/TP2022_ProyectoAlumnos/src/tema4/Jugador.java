@@ -39,8 +39,9 @@ public class Jugador extends Empleado{
     /*No hace la cuenta xq???*/
     @Override
     public double calcularEfectividad() {
+        
         if (getPartidos() > 0) {
-            return getGoles()/getPartidos();
+            return (double) getGoles()/getPartidos();
         } else {
             return 0;
         }
