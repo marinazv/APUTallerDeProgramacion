@@ -86,7 +86,10 @@ public class Proyecto {
       private String toStringInvestigadores(){
           String aux = "Investigadores= ";
           for (int i = 0; i < dimL; i++) {
-              aux+= investigadores[i].toString();
+              if (investigadores[i]!=null) {
+                   aux+= investigadores[i].toString();
+              }
+             
           }
           return aux;
       }
