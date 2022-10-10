@@ -62,7 +62,7 @@ public class Investigador {
     }
         public void agregarSubsidio(Subsidio unSubsidio) {
         if (dimL==0) {
-            subsidios[dimL]=unSubsidio;
+            subsidios[0]=unSubsidio;
         }else if (dimL<5) {
                 this.dimL++;
                 subsidios[dimL]=unSubsidio;
@@ -90,7 +90,7 @@ public class Investigador {
 
     @Override
     public String toString() {
-        return "Investigador{" + "nombre=" + nombre + ", especialidad=" + especialidad + ", categoria=" + categoria +" Total subsidios recibidos= "+calcularSubsidiosTot() +'}';
+        return "Investigador{" + "nombre=" + nombre + ", especialidad=" + especialidad + ", categoria=" + categoria +" Total subsidios recibidos= "+ calcularSubsidiosTot() +'}';
     }
     
 }

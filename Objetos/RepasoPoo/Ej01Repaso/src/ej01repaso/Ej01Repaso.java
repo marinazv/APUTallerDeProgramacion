@@ -28,15 +28,19 @@ public class Ej01Repaso {
         Subsidio s= new Subsidio(456.7, "materiales");
         Subsidio s2= new Subsidio(678.3, "sueldos");
         
+          p.getInvestigadores()[3].agregarSubsidio(s);
+          p.getInvestigadores()[3].agregarSubsidio(s2); 
           p.getInvestigadores()[1].agregarSubsidio(s);
-          p.getInvestigadores()[1].agregarSubsidio(s2);      
+          p.getInvestigadores()[1].agregarSubsidio(s2); 
+          p.getInvestigadores()[2].agregarSubsidio(s);
+          p.getInvestigadores()[2].agregarSubsidio(s2); 
      
        /*for (int i = 0; i < p.getDimL(); i++) {
             p.getInvestigadores()[i].agregarSubsidio(s);
             p.getInvestigadores()[i].agregarSubsidio(s2);
         }
        */
-        p.getInvestigadores()[2].OtorgarTodos();
+        p.getInvestigadores()[3].OtorgarTodos();
         
        System.out.println(p.toString());
     }

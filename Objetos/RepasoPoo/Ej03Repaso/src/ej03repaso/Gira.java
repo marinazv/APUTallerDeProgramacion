@@ -1,0 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ej03repaso;
+
+/**
+ *
+ * @author Usuario
+ */
+public class Gira extends Recital{
+    public String nombre;
+    public Fecha[] fechas;    
+    public int actual;
+    
+    public Gira(String nombre, int dim, String banda, int dimF) {
+        super(banda, dimF);
+        this.nombre = nombre;
+        this.fechas = new Fecha[dim];
+        this.actual=0;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Fecha[] getFecha() {
+        return fechas;
+    }
+
+    public void setFecha(Fecha[] fecha) {
+        this.fechas = fecha;
+    }
+
+    public int getActual() {
+        return actual;
+    }
+
+    public void setActual() {
+        this.actual++;
+    }
+
+    
+    @Override
+    public void agergarTema(String unTema) {
+        if (super.getDimL()< super.getDimF()) {
+            super.setDimL();
+            temas[super.getDimL()]=unTema;
+        }
+    }
+
+   public void agregarFecha(Fecha unaFecha){
+       fechas[fechas.length+1]= unaFecha;
+   }
+    @Override
+    public void actuar(){
+        System.out.println("Buenas Noches "+fechas[actual].getCiudad());
+        super.actuar();
+        setActual();
+    }
+
+    @Override
+    public double calcularCosto() {
+        return 30000*fechas.length;
+    }
+    
+}
