@@ -50,11 +50,18 @@ public abstract class Recital {
     }
     
     public void actuar(){
-     for (int i = 0; i < temas.length; i++) {
+     for (int i = 0; i < this.dimL; i++) {
             System.out.println("Y ahora tocaremos..."+ getTemas()[i]);
         }
     }
-    public abstract void agergarTema(String unTema);
+    public void agergarTema(String unTema){
+      
+        if (getDimL()< getDimF()) {
+            
+            temas[getDimL()]=unTema;
+            setDimL();
+        }
+    }
     public abstract double calcularCosto();
     
 }

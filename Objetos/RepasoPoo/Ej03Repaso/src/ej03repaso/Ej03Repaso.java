@@ -15,7 +15,7 @@ public class Ej03Repaso {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-           Ocasional o= new Ocasional("beneficio", "juan gomez", "20 de nombiembre", "el mato un policia motorizado", 15);
+           Ocasional o= new Ocasional("beneficencia", "juan gomez", "20 de nombiembre", "el mato un policia motorizado", 15);
            o.agergarTema("tema 1");
         o.agergarTema("tema 2");
         o.agergarTema("tema 3");

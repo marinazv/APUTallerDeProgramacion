@@ -65,29 +65,21 @@ public class Gira extends Recital{
         this.actual++;
     }
 
-    
-    @Override
-    public void agergarTema(String unTema) {
-        if (super.getDimL()< super.getDimF()) {
-            super.setDimL();
-            temas[super.getDimL()]=unTema;
-        }
-    }
-
    public void agregarFecha(Fecha unaFecha){
-      setDimL();
+      
        fechas[this.dimL]= unaFecha;
+       setDimL();
    }
     @Override
     public void actuar(){
-        System.out.println("Buenas Noches "+fechas[actual].getCiudad());
+        System.out.println("Buenas Noches "+ fechas[actual].getCiudad());
         super.actuar();
         setActual();
     }
 
     @Override
     public double calcularCosto() {
-        return 30000*fechas.length;
+        return 30000*this.dimL;
     }
     
 }

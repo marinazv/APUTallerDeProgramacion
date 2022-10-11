@@ -61,12 +61,11 @@ public class Investigador {
         this.dimL ++;
     }
         public void agregarSubsidio(Subsidio unSubsidio) {
-        if (dimL==0) {
-            subsidios[0]=unSubsidio;
-        }else if (dimL<5) {
-                this.dimL++;
+            if (dimL<5) {
                 subsidios[dimL]=unSubsidio;
+                this.dimL++;
             }
+           
     }
     
         public double calcularSubsidiosTot(){

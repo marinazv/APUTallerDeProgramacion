@@ -53,9 +53,9 @@ public class Proyecto {
     }
 
     public void agregarInvestigador(Investigador unInvestigador) {
-        if (dimL<50) {
-            setDimL();
+        if (dimL<50) {            
             investigadores[dimL]= unInvestigador;
+            setDimL();
         }
     }
 
