@@ -14,23 +14,23 @@ public class Gira extends Recital{
     public Fecha[] fechas;    
     public int actual;
     public int dim;
-    public int dimL;
+    public int log;
     
     public Gira(String nombre, int dim, String banda, int dimF) {
         super(banda, dimF);
         this.nombre = nombre;
         this.dim=dim;
-        this.dimL=0;
+        this.log=0;
         this.fechas = new Fecha[dim];
         this.actual=0;
     }
 
-    public int getDimL() {
-        return dimL;
+    public int getLog() {
+        return log;
     }
 
-    public void setDimL() {
-        this.dimL ++;
+    public void setLog() {
+        this.log ++;
     }
 
     public int getDim() {
@@ -67,8 +67,8 @@ public class Gira extends Recital{
 
    public void agregarFecha(Fecha unaFecha){
       
-       fechas[this.dimL]= unaFecha;
-       setDimL();
+       fechas[this.log]= unaFecha;
+       setLog();
    }
     @Override
     public void actuar(){
@@ -79,7 +79,7 @@ public class Gira extends Recital{
 
     @Override
     public double calcularCosto() {
-        return 30000*this.dimL;
+        return 30000*this.log;
     }
     
 }

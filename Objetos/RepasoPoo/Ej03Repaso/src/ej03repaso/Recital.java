@@ -18,6 +18,7 @@ public abstract class Recital {
     public Recital(String banda,int dimF ) {
         this.banda = banda;
         this.dimL=0;
+        this.dimF=dimF;
         this.temas =new String[dimF];
     }
 
@@ -50,14 +51,14 @@ public abstract class Recital {
     }
     
     public void actuar(){
+        System.out.println(this.dimL);
      for (int i = 0; i < this.dimL; i++) {
             System.out.println("Y ahora tocaremos..."+ getTemas()[i]);
         }
     }
     public void agergarTema(String unTema){
       
-        if (getDimL()< getDimF()) {
-            
+        if (getDimL()< getDimF()) {            
             temas[getDimL()]=unTema;
             setDimL();
         }
