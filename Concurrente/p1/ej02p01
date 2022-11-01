@@ -1,0 +1,33 @@
+programa ej2p1
+procesos
+  proceso juntarPapeles(ES p:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      p:=p+1
+  fin
+  proceso recorrer(ES p:numero)
+  comenzar
+    repetir(19)
+      si(HayPapelEnLaEsquina)
+        juntarPapeles(p)
+  fin
+areas
+  area1: AreaC(10,10,30,30)  
+robots
+  robot papelero
+  comenzar
+    
+  fin
+variables
+  r1,r2,r3,r4: papelero
+comenzar
+  AsignarArea(r1,area1)
+  AsignarArea(r2, area1)
+  AsignarArea(r3, area1)
+  AsignarArea(r4, area1)
+  Iniciar(r1,10,10)
+  Iniciar(r2, 10,30)
+  Iniciar(r3, 30,30)
+  Iniciar(r4, 30,10)
+fin

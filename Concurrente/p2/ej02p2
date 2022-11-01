@@ -1,0 +1,63 @@
+programa ej02p2
+procesos
+  proceso escalon(E alto:numero; ES cont:numero)
+  variables
+    f, p: numero
+  comenzar
+    f:=0
+    p:=0
+    repetir(alto)
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+        f := f+1
+      mientras HayPapelEnLaEsquina
+        tomarPapel
+        p :=p+1
+      derecha
+      mover 
+      si (f>p)
+        cont := cont +1
+  fin
+  proceso subirEscalera(ES cont:numero)
+  variables
+    alto:numero
+  comenzar
+    repetir 4
+      Random(alto,1,5)
+      escalon(alto, cont)
+  fin
+areas
+  areaJ: AreaP(1,1,1,1)
+  areaR: AreaC(2,1,16,20)
+robots
+  robot jefe
+  variables
+    tot, c:numero
+  comenzar
+    repetir 3
+      RecibirMensaje(c,*)
+      tot := tot +c
+    Informar(tot)
+  fin
+  robot robot1
+  variables
+    cont:numero
+  comenzar
+    cont :=0
+    subirEscalera(cont)
+    EnviarMensaje(cont)
+  fin
+variables
+  r1,r2,r3 : robot1
+  j: jefe
+comenzar
+  AsignarArea(j,areaJ)
+  Iniciar(j,1,1)
+  AsignarArea(r1,areaR)
+  AsignarArea(r2,areaR)
+  AsignarArea(r3,areaR)
+  Iniciar(r1,2,1)
+  Iniciar(r2,7,1)
+  Iniciar(r3,12,1)
+  
+fin

@@ -1,0 +1,54 @@
+programa p01p2
+procesos
+  proceso juntarFlor(ES f: numero)
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      f := f +1
+  fin
+areas
+  area1 : AreaP(1,1,1,10)
+  area2 : AreaP(2,11,2,20)
+  areaJ : AreaP(2,1,2,1) 
+robots
+  robot robotA
+  variables
+    f, qs:numero
+  comenzar
+    RecibirMensaje(qs, j)
+    repetir 9
+      juntarFlor(f)
+      mover
+    juntarFlor(f)
+    EnviarMensaje(qs,j)
+    EnviarMensaje(f,j)
+  fin
+  robot jefe
+  variables
+    f1, f2, dif, r: numero
+  comenzar
+    EnviarMensaje(1,r1)
+    EnviarMensaje(2,r2)
+    RecibirMensaje(r,*)
+    si r=1
+      RecibirMensaje(f1,r1)
+    sino 
+      RecibirMensaje(f2,r2)
+    si f1>f2
+      dif := f1 - f2
+      Informar(dif)
+    sino
+      dif := f2 - f1
+      Informar(dif)
+  fin
+variables
+  r1, r2: robotA
+  j:jefe
+comenzar
+  AsignarArea(r1, area1)
+  AsignarArea(r2, area2)
+  AsignarArea(j, areaJ)
+  Iniciar(j,2,1)
+  Iniciar(r1,1,1)
+  Iniciar(r2,2,11)
+fin
