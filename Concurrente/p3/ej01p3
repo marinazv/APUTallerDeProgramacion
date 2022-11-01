@@ -1,0 +1,82 @@
+programa ej01p3
+procesos
+  proceso juntarFlores(ES flo:numero)
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flo:= flo +1
+  fin
+  proceso juntarPapeles(ES pap:numero)
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      pap:= pap +1
+  fin
+areas
+  {areaFlo: AreaPC(1,1,5,10)}
+  {areaPap: AreaPC(6,1,10,9)}
+  areaCom: AreaC(1,1,10,10)
+robots
+  robot florero
+  variables
+    flo, av, ca,aa,ac: numero
+  comenzar
+    flo:=0
+    aa:=PosAv
+    ac:=PosCa
+    repetir 5
+      Random(av,1,6)
+      Random(ca,1,10)
+      BloquearEsquina(av,ca)
+      Pos(av, ca)
+      si HayFlorEnLaEsquina
+        juntarFlores(flo)
+      Pos(aa,ac)
+      LiberarEsquina(av,ca)
+    repetir flo
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      depositarFlor
+      Pos(aa,ac)
+      LiberarEsquina(10,10)
+  fin
+  robot papelero
+  variables
+    pap, av,ca,aa, ac: numero
+  comenzar
+    pap:=0
+    aa:=PosAv
+    ac:= PosCa
+    repetir 3
+      Random(av, 6,10)
+      Random(ca, 1,9)
+      BloquearEsquina(av,ca)
+      Pos(av,ca)
+      si HayPapelEnLaEsquina
+        juntarPapeles(pap)
+      Pos(aa,ac)
+      LiberarEsquina(av,ca)
+    repetir pap
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      depositarPapel
+      Pos(aa,ac)
+      LiberarEsquina(10,10)      
+  fin
+variables
+  f1, f2: florero
+  p1, p2: papelero
+comenzar
+  {AsignarArea(f1, areaFlo)}
+  AsignarArea(f1,areaCom)
+  {AsignarArea(f2, areaFlo)}
+  AsignarArea(f2,areaCom)
+  {AsignarArea(p1, areaPap)}
+  AsignarArea(p1,areaCom)
+  {AsignarArea(p2, areaPap)}
+  AsignarArea(p2,areaCom)
+  Iniciar(f1, 6,10)
+  Iniciar(f2, 7,10)
+  Iniciar(p1, 8,10)
+  Iniciar(p2, 9,10)
+fin

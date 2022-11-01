@@ -1,0 +1,30 @@
+programa ej02p3
+areas
+  areaR: AreaP(1,1,31,31)
+robots
+  robot florero
+  comenzar
+    si HayFlorEnLaEsquina
+      tomarFlor
+  fin
+  robot papelero
+  comenzar
+    si HayPapelEnLaEsquina
+      tomarPapel
+  fin
+  robot jefe
+  comenzar
+    Informar(1)
+  fin
+variables
+  j: jefe
+  f: florero
+  p:papelero
+comenzar
+  AsignarArea(j, areaR)
+  AsignarArea(f,areaR)
+  AsignarArea(p, areaR)
+  Iniciar(j, 15,1)
+  Iniciar(f,1,1)
+  Iniciar(p, 31,1)
+fin
