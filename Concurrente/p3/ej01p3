@@ -13,9 +13,13 @@ procesos
       pap:= pap +1
   fin
 areas
-  {areaFlo: AreaPC(1,1,5,10)}
-  {areaPap: AreaPC(6,1,10,9)}
-  areaCom: AreaC(1,1,10,10)
+  areaFlo: AreaPC(1,1,5,10)
+  areaPap: AreaPC(6,1,10,9)
+  areaCom: AreaC(10,10,10,10)
+  areaF1: AreaP(6,10,6,10)
+  areaf2: AreaP(7,10,7,10)
+  areaP1: AreaP(8,10,8,10)
+  areaP2: AreaP(9,10,9,10)
 robots
   robot florero
   variables
@@ -25,7 +29,7 @@ robots
     aa:=PosAv
     ac:=PosCa
     repetir 5
-      Random(av,1,6)
+      Random(av,1,5)
       Random(ca,1,10)
       BloquearEsquina(av,ca)
       Pos(av, ca)
@@ -50,6 +54,7 @@ robots
     repetir 3
       Random(av, 6,10)
       Random(ca, 1,9)
+      {Informar('pap',av,ca)}
       BloquearEsquina(av,ca)
       Pos(av,ca)
       si HayPapelEnLaEsquina
@@ -67,14 +72,18 @@ variables
   f1, f2: florero
   p1, p2: papelero
 comenzar
-  {AsignarArea(f1, areaFlo)}
+  AsignarArea(f1, areaFlo)
   AsignarArea(f1,areaCom)
-  {AsignarArea(f2, areaFlo)}
-  AsignarArea(f2,areaCom)
-  {AsignarArea(p1, areaPap)}
+  AsignarArea(f1,areaF1)
+  AsignarArea(f2, areaCom)
+  AsignarArea(f2,areaFlo)
+  AsignarArea(f2,areaf2)
+  AsignarArea(p1, areaPap)
   AsignarArea(p1,areaCom)
-  {AsignarArea(p2, areaPap)}
+  AsignarArea(p1,areaP1)
+  AsignarArea(p2, areaPap)
   AsignarArea(p2,areaCom)
+  AsignarArea(p2,areaP2)
   Iniciar(f1, 6,10)
   Iniciar(f2, 7,10)
   Iniciar(p1, 8,10)

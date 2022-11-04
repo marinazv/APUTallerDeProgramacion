@@ -1,16 +1,41 @@
 programa ej02p3
+procesos
+  proceso juntarFlores(ES flo:numero)
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flo:= flo +1
+  fin
+  proceso caminar(E alto:numero)
+  comenzar
+    repetir alto
+      mover
+  fin
+  proceso escalonF(ES flo:numero, E alto:numero)
+  comenzar
+    juntarFlores(flo)
+    caminar(alto)
+    juntarFLores(flo)
+    derecha
+    caminar(alto)
+  fin
 areas
-  areaR: AreaP(1,1,31,31)
+  areaR: AreaPC(1,1,31,31)
 robots
   robot florero
+  variables
+    flo, alto:numero
   comenzar
-    si HayFlorEnLaEsquina
-      tomarFlor
+    flo:=0
+    alto:=5
+    repetir 4
+      escalonF(flo,alto)
+      alto:= alto-1
+    
   fin
   robot papelero
   comenzar
-    si HayPapelEnLaEsquina
-      tomarPapel
+    
   fin
   robot jefe
   comenzar
